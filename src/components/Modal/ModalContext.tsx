@@ -1,3 +1,4 @@
+import { Dialog } from "@headlessui/react";
 import React, { createContext, useState } from "react";
 import { Overlay } from "../Overlay";
 import { Handler } from "./types";
@@ -59,15 +60,26 @@ const ModalProvider: React.FC = ({ children }) => {
       }}
     >
       {isOpen && (
-        <Dialog>
-          <div className="flex flex-col justify-center items-center fixed inset-0 z-[999]">
-            <Overlay onClick={handleOverlayDismiss} />
-            <div className="modal-container">
+        <Dialog
+          open={isOpen}
+          onClose={handleOverlayDismiss}
+          className="relative z-[999]"
+        >
+          {/* The backdrop, rendered as a fixed sibling to the panel container */}
+          <div
+            className="fixed inset-0 bg-black/30"
+            aria-hidden="true"
+            onClick={handleOverlayDismiss}
+          />
+          {/* Full-screen container to center the panel */}
+          <div className="fixed inset-0 min-h-full flex items-center justify-center p-4 overflow-y-auto">
+            <Dialog.Panel className="modal-container">
+              {/* <Overlay onClick={handleOverlayDismiss} /> */}
               {React.isValidElement(modalNode) &&
                 React.cloneElement(modalNode, {
                   onDismiss: handleDismiss,
                 })}
-            </div>
+            </Dialog.Panel>
           </div>
         </Dialog>
       )}
