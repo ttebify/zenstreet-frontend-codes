@@ -78,7 +78,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-layout",
       options: {
-        component: require.resolve("./src/components/layouts/index.tsx"),
+        component: require.resolve("./src/components/Layouts/index.tsx"),
       },
     },
     "gatsby-plugin-no-sourcemaps",
