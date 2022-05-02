@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "../layouts/Section";
+import Section from "../Layouts/Section";
 
 interface PageContainerProps {
   heading: string;

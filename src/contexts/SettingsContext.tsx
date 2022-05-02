@@ -1,10 +1,10 @@
 import React, { createContext, useState } from "react";
 import { merge } from "lodash";
-import { layoutSettings } from "../components/layouts/settings";
+import { layoutSettings } from "../components/Layouts/settings";
 
 interface SettingsContextType {
-    settings: typeof layoutSettings;
-    updateSettings: (update: {}) => void,
+  settings: typeof layoutSettings;
+  updateSettings: (update: {}) => void;
 }
 const SettingsContext = createContext<SettingsContextType>({
   settings: layoutSettings,
@@ -15,7 +15,10 @@ interface SettingsProviderProps {
   settings?: typeof layoutSettings;
   children: React.ReactNode;
 }
-export const SettingsProvider = ({ settings, children }: SettingsProviderProps) => {
+export const SettingsProvider = ({
+  settings,
+  children,
+}: SettingsProviderProps) => {
   const [currentSettings, setCurrentSettings] = useState(
     settings || layoutSettings
   );

@@ -1,12 +1,12 @@
 import React from "react";
 import SlickSlider from "../components/Widgets/SlickSlider";
-import LandingPageHeader from "../components/layouts/Headers/LandingPageHeader";
+import LandingPageHeader from "../components/Layouts/Headers/LandingPageHeader";
 import { graphql } from "gatsby";
 import { ServicesQueryReturnType } from "../types/queries";
 import { SubHeading } from "../components/Typography";
 import OptionCard from "../components/Widgets/OptionCard";
 import Button from "../components/Buttons/Button";
-import Section from "../components/layouts/Section";
+import Section from "../components/Layouts/Section";
 import { GiControlTower, GiLockedChest, GiNewspaper } from "react-icons/gi";
 import { IconBaseProps } from "react-icons";
 import FeatureCard from "../components/Widgets/FeatureCard";
@@ -69,7 +69,10 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
           ))}
         </div>
       </div>
-      <Section noPadding={false} className="flex flex-col md:flex-row-reverse justify-between">
+      <Section
+        noPadding={false}
+        className="flex flex-col md:flex-row-reverse justify-between"
+      >
         <div className="max-w-md lg:max-w-none">
           <h2 className="max-w-xl md:ml-auto md:text-right">
             Your Dream Can Be More Than {highlighText("Just a Dream")}
@@ -102,7 +105,10 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
           ))}
         </div>
       </Section>
-      <Section noPadding={false} className="text-center bg-blue-50 flex flex-col items-center">
+      <Section
+        noPadding={false}
+        className="text-center bg-blue-50 flex flex-col items-center"
+      >
         <h2 className="mb-5">Newsletter Subscription</h2>
         <SubHeading className="text-gray-400">
           Subscribe to our newsletter to get new investment upportunities
@@ -123,6 +129,5 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
 const highlighText = (text: string) => (
   <span className="text-blue-500">{text}</span>
 );
-
 
 export default IndexPage;

@@ -1,6 +1,6 @@
 import React from "react";
 import { GoHome } from "react-icons/go";
-import { NavigationItems } from "../components/layouts/Navbars/types";
+import { NavigationItems } from "../components/Layouts/Navbars/types";
 
 /**
  * @var {navigationItems} NavigationItems[] The list of all site navigations and options
@@ -19,5 +19,4 @@ export const navigationItems: NavigationItems[] = [
     icon: (props) => <GoHome {...props} />,
     protected: true,
   },
-  
 ];
