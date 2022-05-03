@@ -1,81 +1,72 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import {
-  disableBodyScroll,
-  clearAllBodyScrollLocks,
-  enableBodyScroll,
-} from "body-scroll-lock";
-import IconButton from "../../Widgets/IconButton";
+import React, { Fragment, useCallback, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
 import Link from "../../Link";
 import Logo from "../../SiteLogo";
 import { navigationItems } from "../../../globals/navLinks";
-import Drawer from "../../Drawer/Drawer";
+import Icon from "../../Widgets/Icon";
 
 export default function PrimaryMenu() {
   const [open, setOpen] = useState(false);
-  const mobileNavELement = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!mobileNavELement.current) return;
-    if (open) {
-      disableBodyScroll(mobileNavELement.current);
-    } else {
-      enableBodyScroll(mobileNavELement.current);
-    }
-    return () => {
-      clearAllBodyScrollLocks();
-    };
-  }, [open]);
 
   const openMenu = useCallback(() => setOpen(true), []);
   const closeMenu = useCallback(() => setOpen(false), []);
 
   return (
-    <div className="flex w-full flex-col lg:flex-row lg:items-center lg:justify-between py-5">
-      <div className="flex flex-row items-center justify-between">
-        <Link
-          to="/"
-          className="text-xs font-semibold tracking-widest uppercase rounded-lg focus:outline-none
+    <Fragment>
+      <div className="flex flex-col lg:flex-row lg:items-center w-full">
+        <div className="flex justify-between items-center w-full lg:w-min py-5">
+          <Link
+            to="/"
+            className="text-xs font-semibold tracking-widest rounded-lg focus:outline-none
             focus:shadow-outline"
-        >
-          <Logo />
-        </Link>
-        <IconButton
-          title="Menu"
-          onClick={openMenu}
-          arial-label="Menu"
-          className="lg:hidden cursor-pointer"
-        >
-          <RiBarChartHorizontalLine className="h-6 w-6" />
-        </IconButton>
-      </div>
-      <Drawer anchor={"right"} open={open} onClose={closeMenu}>
-        <nav
-          ref={mobileNavELement}
-          className="w-full h-full text-gray-800 capitalize"
-        >
-          <div className="py-3 flex items-center justify-end px-4">
-            <IconButton onClick={closeMenu} title="close">
-              <FaTimes className="h-5 w-5 text-red-600" />
-            </IconButton>
-          </div>
-          <ul className="flex flex-col w-full">
+          >
+            <Logo />
+          </Link>
+          <Icon
+            title="Menu"
+            arial-label="Menu"
+            className="lg:hidden cursor-pointer"
+          >
+            {open ? (
+              <FaTimes onClick={closeMenu} className="h-6 w-6" />
+            ) : (
+              <RiBarChartHorizontalLine
+                onClick={openMenu}
+                className="h-6 w-6"
+              />
+            )}
+          </Icon>
+        </div>
+        <nav className="w-full text-gray-800 capitalize py-5 flex lg:items-center">
+          <ul
+            className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-2
+            lg:items-center lg:justify-end w-full"
+          >
             {navigationItems.map((nav) => (
-              <li key={nav.id} className="block w-full">
+              <li
+                key={nav.id}
+                className="flex items-stretch w-full lg:w-min lg:inline-block"
+              >
                 <Link
                   to={nav.href}
                   activeClassName="text-blue-600"
-                  className="mb-8 hover:underline p-2"
+                  className="inline-block text-xl p-2 m-0 whitespace-nowrap"
                   onClick={closeMenu}
                 >
                   {nav.title}
                 </Link>
               </li>
             ))}
+            <li className="flex justify-between items-end lg:!ml-4 lg:items-center w-full lg:w-auto lg:space-x-2">
+              <Link to="/app/signup" as="button">
+                Start Funding
+              </Link>
+              <Link to="/app/login">Login</Link>
+            </li>
           </ul>
         </nav>
-      </Drawer>
-    </div>
+      </div>
+    </Fragment>
   );
 }

@@ -35,7 +35,10 @@ const Sidenav = () => {
           className={cls("fixed top-0 left-0 h-screen w-64 shadow-md z-[111]")}
         >
           <div className="flex flex-col relative h-full bg-white shadow-md z-[111]">
-            <div className="h-16 pt-4 px-3">
+            <div
+              className="h-16 pt-4 px-3"
+              onClick={() => updateSidebarMode({ show: false })}
+            >
               <Logo className="block" />
             </div>
             <Scrollbar

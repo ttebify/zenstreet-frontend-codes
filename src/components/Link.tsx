@@ -1,5 +1,6 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
+import cls from "classnames";
 
 type LinkProps = {
   as?: "button";
@@ -27,7 +28,7 @@ export default function Link({
     return (
       <GatsbyLink
         to={to}
-        className={`hover:text-blue-500 ${linkClassName} ${className}`}
+        className={cls("hover:text-blue-500", linkClassName, className)}
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
         {...other}
