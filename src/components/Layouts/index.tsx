@@ -7,6 +7,7 @@ import { ToastListener, ToastsProvider } from "../../contexts/ToastContext";
 import PrimaryNav from "./Navbars/PrimaryNav";
 import PrimaryFooter from "./PrimaryFooter";
 import ModalProvider from "../Modal/ModalContext";
+import Section from "./Section";
 
 /**
  * This component is used to share state accross all sections of the site without unmounting on page
@@ -26,7 +27,12 @@ export default function Layout({ children, location }: PageProps) {
                 children
               ) : (
                 <React.Fragment>
-                  <PrimaryNav />
+                  <Section
+                    className="!pt-0 pb-0 !max-w-screen-xl"
+                    containerClass="shadow-sm bg-white"
+                  >
+                    <PrimaryNav />
+                  </Section>
                   {children}
                   <PrimaryFooter />
                 </React.Fragment>
