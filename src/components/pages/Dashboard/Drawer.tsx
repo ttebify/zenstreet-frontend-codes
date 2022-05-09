@@ -2,7 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import { IconBaseProps } from "react-icons";
 import Link from "../../Link";
-import { BsBriefcaseFill, BsCardChecklist, BsEmojiSmile } from "react-icons/bs";
+import { BsBriefcaseFill, BsEmojiSmile } from "react-icons/bs";
+import { GrBusinessService } from "react-icons/gr";
 import PageContainer from "../../PageContainer/PageContainer";
 
 const adverts = [
@@ -38,7 +39,7 @@ sequi repudiandae voluptas?`,
 
 const features = [
   {
-    icon: (props?: IconBaseProps) => <BsCardChecklist {...props} />,
+    icon: (props?: IconBaseProps) => <GrBusinessService {...props} />,
     heading: "Business Center",
     description: "View different funding options to invest in.",
     url: "/app/business-center",
@@ -137,23 +138,22 @@ interface FeatureLinkProps {
   desciption: string;
   url: string;
 }
-function FeatureLink({ /* icon, */ heading, desciption, url }: FeatureLinkProps) {
+function FeatureLink({ icon, heading, desciption, url }: FeatureLinkProps) {
   return (
     <Link
       to={url}
-      className="w-full h-52 max-w-xs bg-white inline-block m-3 group rounded-3xl shadow-md hover:shadow-lg
-        overflow-hidden ring-1 ring-gray-50"
+      className="w-full h-52 max-w-xs bg-white inline-block m-3 group rounded-3xl shadow-md
+        hover:shadow-lg overflow-hidden ring-1 ring-gray-50 hover:text-yellow-600"
     >
       <div className="mx-auto flex items-stretch h-full">
         <div className="mt-2 text-base !font-normal w-2/3 p-5">
           <h2 className="text-2xl font-bold">{heading}</h2>
           <p>{desciption}</p>
         </div>
-        <div className="bg-gray-500 w-1/3">
-          {/* {icon({
-            className:
-              "text-blue-400 opacity-100 group-hover:opacity-80 w-full h-full",
-          })} */}
+        <div className="bg-gray-50 w-1/3 flex justify-center items-center overflow-hidden">
+          {icon({
+            className: "opacity-100 group-hover:opacity-80 w-16 h-16",
+          })}
         </div>
       </div>
     </Link>

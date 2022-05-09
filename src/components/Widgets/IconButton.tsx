@@ -12,7 +12,7 @@ const IconButton: React.FC<ButtonProps> = ({
       {...rest}
       className={cls(
         "bg-gray-50 rounded-full p-1 hover:bg-gray-100 focus:bg-gray-100 focus-within:bg-gray-100",
-        "mx-2",
+        "mx-2 flex justify-center items-center",
         className
       )}
     >

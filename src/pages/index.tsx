@@ -7,10 +7,12 @@ import { SubHeading } from "../components/Typography";
 import OptionCard from "../components/Widgets/OptionCard";
 import Button from "../components/Buttons/Button";
 import Section from "../components/Layouts/Section";
-import { GiControlTower, GiLockedChest, GiNewspaper } from "react-icons/gi";
+import { GiGuardedTower } from "react-icons/gi";
+import { MdOutlineTrendingUp } from "react-icons/md";
 import { IconBaseProps } from "react-icons";
 import FeatureCard from "../components/Widgets/FeatureCard";
 import { StaticImage } from "gatsby-plugin-image";
+import { FaSearchDollar } from "react-icons/fa";
 
 // Graphql query for this page
 export const servicesQuery = graphql`
@@ -29,18 +31,18 @@ export const servicesQuery = graphql`
 
 const featureSummary = [
   {
-    icon: (props?: IconBaseProps) => <GiLockedChest {...props} />,
+    icon: (props?: IconBaseProps) => <GiGuardedTower {...props} />,
     heading: "Security",
     summary:
       "Protect your assets from  devaluation by helping you earn in cryptocurrency.",
   },
   {
-    icon: (props?: IconBaseProps) => <GiNewspaper {...props} />,
+    icon: (props?: IconBaseProps) => <MdOutlineTrendingUp {...props} />,
     heading: "Active Updates",
     summary: "Help you stay on top of trends in the financial market.",
   },
   {
-    icon: (props?: IconBaseProps) => <GiControlTower {...props} />,
+    icon: (props?: IconBaseProps) => <FaSearchDollar {...props} />,
     heading: "Be in Control",
     summary:
       "We help you keep track of your contributions and accrued interests.",
@@ -55,10 +57,10 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
         description={`Take advantage of our innovative blockchain driven crowdsourcing technology
           to stay on top of your income.`}
       />
-      <div className="px-4 md:px-16 max-w-screen-2xl mx-auto">
+      <div className="px-4 md:px-16 py-10 max-w-screen-2xl mx-auto">
         <div
-          className="py-6 relative md:flex md:justify-between md:rounded-md divide-y md:divide-y-0
-            md:divide-x"
+          className="py-6 relative flex flex-col items-center md:items-stretch md:justify-center
+            divide-y md:divide-y-0 md:divide-x"
         >
           {featureSummary.map((summary) => (
             <FeatureCard
@@ -86,11 +88,11 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
             for every contributor or visitor to our platforms.
           </p>
         </div>
-        <div className="h-80 lg:h-auto w-full">
+        <div className="lg:h-auto w-full">
           <StaticImage
-            src="../images/icon.png"
-            alt="Your Dream Can Be More Than Just a Dream"
-            layout="constrained"
+            src="../images/pexels-andrea-piacquadio-3974773.jpg"
+            alt="Smiling male entrepreneur in eyeglasses browsing smartphone in downtown"
+            layout="fullWidth"
             placeholder="blurred"
           />
         </div>
@@ -105,7 +107,7 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
       <Section noPadding={false} className="text-center">
         <SubHeading>Begin today</SubHeading>
         <h2>Checkout The Best {highlighText("Funding Options")}</h2>
-        <div className="md:flex w-full md:flex-wrap md:justify-between">
+        <div className="flex flex-col md:flex-row w-full md:flex-wrap items-center md:justify-between">
           {new Array(3).fill("").map((_, i) => (
             <OptionCard key={i} />
           ))}

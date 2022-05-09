@@ -34,7 +34,7 @@ export default function LandingPageHeader({
             placeItems: "center",
             display: "grid",
           }}
-          className="max-w-2xl mx-auto text-center py-10"
+          className="max-w-2xl mx-auto text-center py-10 px-6"
         >
           <div>
             <h1>{header}</h1>

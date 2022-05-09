@@ -80,7 +80,7 @@ export default function SlickSlider(props: SlickSLiderProps) {
               </div>
               <p className="max-w-xl mx-auto">{node.description}</p>
               <ul
-                className="text-left mt-6 md:mt-8 list-inside grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl
+                className="text-left mt-6 md:mt-8 list-inside grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-3xl
                   mx-auto"
               >
                 {node.steps.map((step, i) => (
