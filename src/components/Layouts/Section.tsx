@@ -15,7 +15,7 @@ export default function Section({
     <div className={cls(props.containerClass)}>
       <div
         className={cls(
-          "px-4 md:px-16 max-w-screen-xl mx-auto",
+          "px-4 md:px-16 max-w-screen-2xl mx-auto",
           pClass,
           props.className
         )}

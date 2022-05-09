@@ -121,7 +121,7 @@ export default function PrimaryFooter() {
                     {description}
                   </p>
                   <div className="space-x-2 mt-3">
-                    {new Array(3).fill("").map((i, index) => (
+                    {new Array(3).fill("").map((_i, index) => (
                       <div
                         key={index}
                         className="h-6 w-6 bg-blue-600 inline-block"
