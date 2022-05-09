@@ -5,6 +5,7 @@ import Link from "../../Link";
 import Logo from "../../SiteLogo";
 import { navigationItems } from "../../../globals/navLinks";
 import Icon from "../../Widgets/Icon";
+import cls from "classnames";
 
 export default function PrimaryMenu() {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,12 @@ export default function PrimaryMenu() {
             )}
           </Icon>
         </div>
-        <nav className="w-full text-gray-800 capitalize py-5 flex lg:items-center">
+        <nav
+          className={cls(
+            "w-full text-gray-800 capitalize py-5 flex lg:items-center",
+            { hidden: !open }
+          )}
+        >
           <ul
             className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-2
             lg:items-center lg:justify-end w-full"
@@ -58,7 +64,10 @@ export default function PrimaryMenu() {
                 </Link>
               </li>
             ))}
-            <li className="flex justify-between items-end lg:!ml-4 lg:items-center w-full lg:w-auto lg:space-x-2">
+            <li
+              className="flex justify-between items-end lg:!ml-4 lg:items-center w-full lg:w-auto
+              lg:space-x-2"
+            >
               <Link to="/app/signup" as="button">
                 Start Funding
               </Link>

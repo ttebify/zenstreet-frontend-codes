@@ -25,7 +25,9 @@ export default function Button({
         ${variantClass} ${className}`}
       {...props}
     >
-      {loading && <BiLoader className="animate-spin !w-4 !h-4 inline-block mr-1" />}
+      {loading && (
+        <BiLoader className="animate-spin !w-4 !h-4 inline-block mr-1" />
+      )}
       {children}
     </button>
   );
