@@ -10,12 +10,12 @@ export default function Section({
   containerClass?: string;
   noPadding?: boolean;
 }) {
-  const pClass = noPadding ? "pt-0 py-0" : "py-20";
+  const pClass = noPadding ? "pt-0 py-0" : "py-16 md:py-20";
   return (
     <div className={cls(props.containerClass)}>
       <div
         className={cls(
-          "px-4 md:px-16 max-w-screen-lg mx-auto",
+          "px-4 md:px-16 max-w-screen-xl mx-auto",
           pClass,
           props.className
         )}

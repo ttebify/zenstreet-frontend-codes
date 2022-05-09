@@ -102,7 +102,7 @@ interface FooterQueryReturnType {
 }
 export default function PrimaryFooter() {
   return (
-    <footer>
+    <footer className="bg-white">
       <StaticQuery
         query={footerQuery}
         render={(data: FooterQueryReturnType) => {
@@ -110,14 +110,22 @@ export default function PrimaryFooter() {
             data.site.siteMetadata;
 
           return (
-            <Section noPadding={false} className="text-center md:text-left pb-10">
+            <Section
+              noPadding={false}
+              className="text-center md:text-left pb-10"
+            >
               <div className="md:flex md:justify-between">
                 <div className="mb-8 md:w-[20%] lg:w-1/4">
                   <h5>{name}</h5>
-                  <p className="md:text-base text-gray-500 max-w-xl mx-auto">{description}</p>
+                  <p className="md:text-base text-gray-500 max-w-xl mx-auto">
+                    {description}
+                  </p>
                   <div className="space-x-2 mt-3">
                     {new Array(3).fill("").map((i, index) => (
-                      <div key={index} className="h-6 w-6 bg-blue-600 inline-block" />
+                      <div
+                        key={index}
+                        className="h-6 w-6 bg-blue-600 inline-block"
+                      />
                     ))}
                   </div>
                 </div>

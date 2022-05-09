@@ -42,7 +42,7 @@ export default function PrimaryMenu() {
         <nav
           className={cls(
             "w-full text-gray-800 capitalize py-5 flex lg:items-center",
-            { hidden: !open }
+            { "hidden lg:block": !open }
           )}
         >
           <ul

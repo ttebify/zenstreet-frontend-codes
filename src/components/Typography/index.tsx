@@ -1,23 +1,14 @@
 import React from "react";
 import type { HeadingProps, SectionDescriptionProps } from "./types";
 
-export function SectionHeading({
-  children,
-  ...props
-}: HeadingProps) {
-  return (
-    <h2
-      {...props}
-    >
-      {children}
-    </h2>
-  );
+export function SectionHeading({ children, ...props }: HeadingProps) {
+  return <h2 {...props}>{children}</h2>;
 }
 
 export function SubHeading({ children, className, ...props }: HeadingProps) {
   return (
     <div
-      className={`text-xl sm:text-2xl font-normal text-gray-400 ${className}`}
+      className={`text-xl sm:text-2xl font-normal text-gray-500 ${className}`}
       {...props}
     >
       {children}
