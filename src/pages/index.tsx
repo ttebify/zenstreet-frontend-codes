@@ -59,8 +59,8 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
       />
       <div className="px-4 md:px-16 py-10 max-w-screen-2xl mx-auto">
         <div
-          className="py-6 relative flex flex-col items-center md:items-stretch md:justify-center
-            divide-y md:divide-y-0 md:divide-x"
+          className="py-6 relative flex flex-col md:flex-row items-center md:items-stretch
+            md:justify-center divide-y md:divide-y-0 md:divide-x"
         >
           {featureSummary.map((summary) => (
             <FeatureCard
