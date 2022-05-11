@@ -16,11 +16,14 @@ import SingleFundingOptionPage from "../components/pages/FundingOptions/SingleFu
 import SelectPackPage from "../components/pages/Packs/SelectPackPage";
 import RewardsPage from "../components/pages/Rewards/RewardsPage";
 import RegisterPage2 from "../components/AuthPages/RegisterPage2";
+import Page404 from "../components/pages/NotFound/404";
+import ProfilePage from "../components/Profile";
 
 const App = ({ path, ...props }: PageProps) => (
   <Router basepath="/app">
     <AuthGuard path="/drawer" component={Drawer} {...props} />
-    <AuthGuard path="/account" component={AccountPage} {...props} />
+    <AuthGuard path="/profile" component={ProfilePage} {...props} />
+    <AuthGuard path="/profile/settings" component={AccountPage} {...props} />
     <AuthGuard
       path="/business-center"
       component={BusinessCenterPage}
@@ -41,6 +44,7 @@ const App = ({ path, ...props }: PageProps) => (
     <LoginPage path="/login" {...props} />
     <ForgetPasswordPage path="/forgot-password" {...props} />
     <ResetPasswordPage path="/reset-password" {...props} />
+    <AuthGuard path="*" component={Page404} {...props} />
   </Router>
 );
 

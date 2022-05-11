@@ -12,7 +12,7 @@ export const navigations: NavigationItems[] = [
   },
   {
     name: "Profile",
-    path: "/app/account",
+    path: "/app/profile",
   },
   {
     name: "Products",
