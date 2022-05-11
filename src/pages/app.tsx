@@ -3,7 +3,7 @@ import { Router } from "@reach/router";
 import AuthGuard from "../auth/AuthGuard";
 import { PageProps } from "gatsby";
 import LoginPage from "../components/AuthPages/LoginPage";
-import RegisterPage from "../components/AuthPages/RegisterPage";
+import RegisterPage1 from "../components/AuthPages/RegisterPage1";
 import AccountPage from "../components/Profile/Account";
 import ForgetPasswordPage from "../components/AuthPages/ForgetPasswordPage";
 import ResetPasswordPage from "../components/AuthPages/ResetPasswordPage";
@@ -15,19 +15,29 @@ import BusinessCenterPage from "../components/pages/FundingOptions/BusinesCenter
 import SingleFundingOptionPage from "../components/pages/FundingOptions/SingleFundingOptionPage";
 import SelectPackPage from "../components/pages/Packs/SelectPackPage";
 import RewardsPage from "../components/pages/Rewards/RewardsPage";
+import RegisterPage2 from "../components/AuthPages/RegisterPage2";
 
 const App = ({ path, ...props }: PageProps) => (
   <Router basepath="/app">
     <AuthGuard path="/drawer" component={Drawer} {...props} />
     <AuthGuard path="/account" component={AccountPage} {...props} />
-    <AuthGuard path="/business-center" component={BusinessCenterPage} {...props} />
-    <AuthGuard path="/investment/:investmentID" component={SingleFundingOptionPage} {...props} />
+    <AuthGuard
+      path="/business-center"
+      component={BusinessCenterPage}
+      {...props}
+    />
+    <AuthGuard
+      path="/investment/:investmentID"
+      component={SingleFundingOptionPage}
+      {...props}
+    />
     <AuthGuard path="/packs" component={SelectPackPage} {...props} />
     <AuthGuard path="/trade-summary" component={TradeSummaryPage} {...props} />
     <AuthGuard path="/rewards" component={RewardsPage} {...props} />
     <AuthGuard path="/activities" component={ActivityPage} {...props} />
     <AuthGuard path="/referrals" component={ReferralPage} {...props} />
-    <RegisterPage path="/signup" {...props} />
+    <RegisterPage1 path="/register" {...props} />
+    <RegisterPage2 path="/register-complete" {...props} />
     <LoginPage path="/login" {...props} />
     <ForgetPasswordPage path="/forgot-password" {...props} />
     <ResetPasswordPage path="/reset-password" {...props} />

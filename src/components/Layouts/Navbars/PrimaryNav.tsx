@@ -68,7 +68,7 @@ export default function PrimaryMenu() {
               className="flex justify-between items-end lg:!ml-4 lg:items-center w-full lg:w-auto
               lg:space-x-2"
             >
-              <Link to="/app/signup" as="button">
+              <Link to="/app/register" as="button">
                 Start Funding
               </Link>
               <Link to="/app/login">Login</Link>

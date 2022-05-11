@@ -4,6 +4,7 @@ export interface FormFaceProps {
   title: string;
   motivation: string;
   content: JSX.Element;
+  bgColorClass?: string;
 }
 
 export type AllInputTypes = HTMLInputElement;

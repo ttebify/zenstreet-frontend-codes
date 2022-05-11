@@ -57,10 +57,11 @@ const VerticalNavExpansionPanel = ({
     <div>
       <div
         className={cls({
-          "flex justify-between items-center h-[44px] mb-2 w-full pr-4 whitespace-pre":
+          "flex justify-between items-center h-[44px] mb-2 w-full pr-4 whitespace-pre transition-colors":
             true,
-          "overflow-hidden hover:bg-gray-50 cursor-pointer": true,
-          "open bg-gray-100": !collapsed,
+          "overflow-hidden hover:bg-[#0071ce] hover:text-white cursor-pointer duration-150 text-[#0071ce]":
+            true,
+          "open bg-[#0071ce] !text-white": !collapsed,
         })}
         onClick={handleClick}
       >

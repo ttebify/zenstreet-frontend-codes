@@ -2,9 +2,14 @@ import React from "react";
 import Slider from "react-slick";
 import { IconBaseProps } from "react-icons";
 import Link from "../../Link";
-import { BsBriefcaseFill, BsEmojiSmile } from "react-icons/bs";
-import { GrBusinessService } from "react-icons/gr";
+import { BsEmojiSmile, BsQuestionOctagonFill } from "react-icons/bs";
+import { TiMessages, TiSocialFacebook } from "react-icons/ti";
 import PageContainer from "../../PageContainer/PageContainer";
+import { RiDashboardLine, RiLuggageDepositLine } from "react-icons/ri";
+import { GiMoneyStack } from "react-icons/gi";
+import { MdAutorenew, MdOutlineSupportAgent } from "react-icons/md";
+import { VscOrganization } from "react-icons/vsc";
+import { FaBlog } from "react-icons/fa";
 
 const adverts = [
   {
@@ -39,34 +44,59 @@ sequi repudiandae voluptas?`,
 
 const features = [
   {
-    icon: (props?: IconBaseProps) => <GrBusinessService {...props} />,
-    heading: "Business Center",
-    description: "View different funding options to invest in.",
-    url: "/app/business-center",
+    icon: (props?: IconBaseProps) => <RiDashboardLine {...props} />,
+    heading: "Dashboard",
+    url: "/app/dashboard",
   },
   {
-    icon: (props?: IconBaseProps) => <BsBriefcaseFill {...props} />,
-    heading: "Referral Activity",
-    description: "Your referral bonuses, activities and tree all in one place",
-    url: "/app/referrals",
+    icon: (props?: IconBaseProps) => <RiLuggageDepositLine {...props} />,
+    heading: "Deposit",
+    url: "/app/deposit",
+  },
+  {
+    icon: (props?: IconBaseProps) => <GiMoneyStack {...props} />,
+    heading: "Withdrawal",
+    url: "/app/withdrawal",
+  },
+  {
+    icon: (props?: IconBaseProps) => <MdAutorenew {...props} />,
+    heading: "Auto Invest",
+    url: "/app/auto-invest",
+  },
+  {
+    icon: (props?: IconBaseProps) => <FaBlog {...props} />,
+    heading: "Blog",
+    url: "/blog",
+  },
+  {
+    icon: (props?: IconBaseProps) => <BsQuestionOctagonFill {...props} />,
+    heading: "How TO",
+    url: "/how-to",
+  },
+  {
+    icon: (props?: IconBaseProps) => <TiSocialFacebook {...props} />,
+    heading: "Socials",
+    url: "/about#socials",
   },
   {
     icon: (props?: IconBaseProps) => <BsEmojiSmile {...props} />,
-    heading: "Account",
-    description: "Account settings, configs, security and more.",
-    url: "/app/account",
+    heading: "Happiness Center",
+    url: "/happiness-center",
   },
   {
-    icon: (props?: IconBaseProps) => <BsEmojiSmile {...props} />,
-    heading: "Packages",
-    description: "Packages bost your portfolio and multiplies your rewards",
-    url: "/app/packs",
+    icon: (props?: IconBaseProps) => <TiMessages {...props} />,
+    heading: "FAQ",
+    url: "/frequently-asked-questions",
   },
   {
-    icon: (props?: IconBaseProps) => <BsEmojiSmile {...props} />,
-    heading: "Rewards",
-    description: "Check all your rewards",
-    url: "/app/rewards",
+    icon: (props?: IconBaseProps) => <MdOutlineSupportAgent {...props} />,
+    heading: "Feedback Support",
+    url: "/feedback-support",
+  },
+  {
+    icon: (props?: IconBaseProps) => <VscOrganization {...props} />,
+    heading: "About Us",
+    url: "/about-us",
   },
 ];
 
@@ -76,13 +106,12 @@ export default function Dashboard() {
       topSection={() => <AdvertSlider data={adverts} />}
       heading="Where do you want to visit today?"
     >
-      <div className="flex flex-wrap justify-around py-10 mx-auto">
+      <div className="flex flex-wrap py-10 mx-auto max-w-xl">
         {features.map((summary) => (
           <FeatureLink
             key={summary.heading}
             icon={summary.icon}
             heading={summary.heading}
-            desciption={summary.description}
             url={summary.url}
           />
         ))}
@@ -107,16 +136,16 @@ export function AdvertSlider(props: AdvertSliderProps) {
       <Slider
         autoplay
         autoplaySpeed={5000}
-        dots
+        dots={false}
         arrows={false}
         dotsClass="flex justify-center items-center mt-3"
         slidesPerRow={1}
-        appendDots={(dots) => {
+        /* appendDots={(dots) => {
           return <ul>{dots}</ul>;
         }}
         customPaging={() => (
-          <div className="bg-amber-100 w-10 h-2 mx-1.5 rounded-md transition-all duration-200" />
-        )}
+          <div className="bg-white w-10 h-2 mx-1.5 rounded-md transition-all duration-200" />
+        )} */
       >
         {services.map(({ id, heading, body }) => (
           <div
@@ -135,27 +164,20 @@ export function AdvertSlider(props: AdvertSliderProps) {
 interface FeatureLinkProps {
   icon: (props?: IconBaseProps) => JSX.Element;
   heading: string;
-  desciption: string;
   url: string;
 }
-function FeatureLink({ icon, heading, desciption, url }: FeatureLinkProps) {
+function FeatureLink({ icon, heading, url }: FeatureLinkProps) {
   return (
     <Link
       to={url}
-      className="w-full h-52 max-w-xs bg-white inline-block m-3 group rounded-3xl shadow-md
-        hover:shadow-lg overflow-hidden ring-1 ring-gray-50 hover:text-yellow-600"
+      className=" bg-[#ff7f30] m-3 w-20 group overflow-hidden inline-flex flex-col items-center
+      text-white hover:shadow-md transition-all duration-200 hover:text-[#ff7f30] rounded-md p-2
+      hover:bg-white"
     >
-      <div className="mx-auto flex items-stretch h-full">
-        <div className="mt-2 text-base !font-normal w-2/3 p-5">
-          <h2 className="text-2xl font-bold">{heading}</h2>
-          <p>{desciption}</p>
-        </div>
-        <div className="bg-gray-50 w-1/3 flex justify-center items-center overflow-hidden">
-          {icon({
-            className: "opacity-100 group-hover:opacity-80 w-16 h-16",
-          })}
-        </div>
+      <div className="p-3 flex justify-center items-center overflow-hidden">
+        {icon()}
       </div>
+      <p className="text-xs text-center">{heading}</p>
     </Link>
   );
 }

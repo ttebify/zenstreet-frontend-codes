@@ -31,10 +31,8 @@ const Sidenav = () => {
         leaveTo="-translate-x-full"
         as={Fragment}
       >
-        <div
-          className={cls("fixed top-0 left-0 h-screen w-64 shadow-md z-[111]")}
-        >
-          <div className="flex flex-col relative h-full bg-white shadow-md z-[111]">
+        <div className={cls("fixed top-0 left-0 h-screen w-64 z-[111]")}>
+          <div className="flex flex-col relative h-full bg-[#d9eaf8] z-[111]">
             <div
               className="h-16 pt-4 px-3"
               onClick={() => updateSidebarMode({ show: false })}

@@ -35,8 +35,8 @@ function TextInput<T extends AllInputTypes>({
           id={inputId}
           type={isPassword ? "password" : "text"}
           className={cls(
-            `inline-block bg-gray-100 px-2 py-2.5 placeholder:text-gray-400 rounded w-full
-            outline-none ring ring-transparent focus:ring-sky-600 focus-within:ring-sky-600
+            `inline-block bg-white px-2 py-2.5 placeholder:text-gray-400 rounded w-full
+            outline-none ring ring-gray-100 focus:ring-sky-600 focus-within:ring-sky-600
             transition-all duration-200 placeholder:text-sm`,
             {
               "placeholder:!text-red-500 !text-red-500": hasError,

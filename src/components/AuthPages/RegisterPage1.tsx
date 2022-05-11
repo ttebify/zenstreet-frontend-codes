@@ -3,7 +3,7 @@ import { PageProps } from "gatsby";
 import FormFace from "../Forms/AuthForms/FormFace";
 import RegisterForm from "../Forms/AuthForms/RegisterForm";
 
-export default function RegisterPage(_props: PageProps) {
+export default function Register1Page(_props: PageProps) {
   return (
     <FormFace
       title="Welcome Aboard"

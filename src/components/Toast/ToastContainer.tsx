@@ -4,13 +4,13 @@ import Toast from "./Toast";
 import { ToastContainerProps } from "./types";
 
 const ZINDEX = 1000;
-const BOTTOM_POSITION = 80; // Initial position from the bottom
+const BOTTOM_POSITION = 20; // Initial position from the bottom
 
 const ToastContainer: React.FC<ToastContainerProps> = ({
   toasts,
   onRemove,
   delay = 6000,
-  stackSpacing = 80,
+  stackSpacing = 40,
 }) => {
   return (
     <div>

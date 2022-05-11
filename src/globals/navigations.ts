@@ -11,19 +11,23 @@ export const navigations: NavigationItems[] = [
     path: "/app/drawer",
   },
   {
-    name: "Trades",
-    path: "/app/trade-summary",
+    name: "Profile",
+    path: "/app/account",
   },
   {
-    name: "Rewards",
-    path: "/app/rewards",
+    name: "Products",
+    path: "/app/business-center",
   },
   {
-    name: "Activities",
-    path: "/app/activities",
+    name: "Services",
+    path: "/services",
   },
   {
-    label: "Account",
+    name: "About Us",
+    path: "/about",
+  },
+  {
+    label: "Account Management",
     type: "label",
   },
   {
@@ -35,7 +39,7 @@ export const navigations: NavigationItems[] = [
       },
       {
         name: "Sign up",
-        path: "/app/signup",
+        path: "/app/register",
       },
       {
         name: "Forgot Password",

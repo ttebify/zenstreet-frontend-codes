@@ -8,8 +8,8 @@
 
 @layer base {
   body {
-    @apply font-sans h-screen text-gray-900 scroll-smooth text-lg lg:text-xl transition-all duration-200
-      bg-gray-50;
+    @apply font-sans h-screen text-gray-900 scroll-smooth transition-all duration-200
+      bg-[#f2f8fd];
   }
 
   h1 {

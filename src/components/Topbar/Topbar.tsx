@@ -4,7 +4,7 @@ import useSettings from "../../hooks/useSettings";
 import Icon from "../Widgets/Icon";
 import IconButton from "../Widgets/IconButton";
 import SearchBox from "../SearchBox/SearchBox";
-import { BiEnvelope, BiMenu } from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
 import NotificationBar from "../NotificationBar/NotificationBar";
 import { NotificationProvider } from "../../contexts/NotificationContext";
 
@@ -31,19 +31,14 @@ const Topbar = () => {
       <div className="h-16 pl-3.5 pr-4 sm:pl-4 sm:pr-5 md:pl-4 md:pr-5">
         <div className="flex justify-between items-center h-full">
           <div className="flex">
-            <IconButton onClick={handleSidebarToggle}>
+            <IconButton
+              onClick={handleSidebarToggle}
+              className="focus-within:scale-110 hover:scale-110 focus:scale-110"
+            >
               <Icon>
                 <BiMenu />
               </Icon>
             </IconButton>
-
-            <div className="hidden md:block">
-              <IconButton>
-                <Icon>
-                  <BiEnvelope />
-                </Icon>
-              </IconButton>
-            </div>
           </div>
           <div className="flex items-center">
             <SearchBox />

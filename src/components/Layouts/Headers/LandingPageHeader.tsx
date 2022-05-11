@@ -40,7 +40,7 @@ export default function LandingPageHeader({
             <h1>{header}</h1>
             <p className="body-text">{description}</p>
             <div className="my-8">
-              <Link to="/app/signup" as="button" variant="primary">
+              <Link to="/app/register" as="button" variant="primary">
                 Start Investing Today
               </Link>
             </div>

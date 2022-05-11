@@ -1,28 +1,30 @@
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Link from "../../Link";
 
 export default function FundingOption() {
   return (
-    <div className="w-full max-w-xs overflow-hidden rounded-2xl shadow-lg">
-      <div className="h-40 w-full bg-gray-300">Image</div>
-      <div className="space-y-3 mt-3 p-3">
-        <div className="font-medium text-2xl">Chemical charm</div>
-        <p className="text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, vitae
-          diam, porta odio.
-        </p>
+    <div className="w-full max-w-xs flex-none overflow-hidden ring-1">
+      <div className="w-full bg-gray-300">
+        <StaticImage
+          src="../../../images/pexels-serena-koi-6878250.jpg"
+          alt="A farm"
+          layout="fullWidth"
+          placeholder="blurred"
+        />
+      </div>
+      <div className="space-y-3 p-3">
+        <div className="font-semibold text-2xl">Chemical Charm</div>
         <ul className="text-sm list-inside">
           <li>ROC: 200%</li>
           <li>Min. Contribution: 20 USDT Project</li>
           <li>Duration: 4d</li>
         </ul>
-        <p className="my-3 font-medium text-sm text-center">
-          Funding begins in 3 days
-        </p>
+        <p className="my-3 font-medium text-sm">Funding begins in 3 days</p>
         <Link
           as="button"
           to="/app/investment/dt73vsyu6389"
-          className="block mx-auto w-full"
+          className="rounded-none"
         >
           View This Project
         </Link>

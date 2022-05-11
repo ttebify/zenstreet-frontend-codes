@@ -17,19 +17,19 @@ function CheckBox({
   return (
     <div
       className={cls(
-        "w-full bg-gray-100 border rounded text-gray-400 text-base border-gray-200 p-2 relative flex",
+        "w-full bg-gray-100 border text-gray-400 text-base border-gray-200 p-2 relative flex",
         "justify-between items-center transition-colors duration-200",
 
         {
-          "bg-sky-200 border-sky-600 text-sky-700": selected,
+          "bg-[#9a4453]/30 border-[#9a4453] text-[#5f0e22]": selected,
         }
       )}
     >
       <div>{label}</div>
       <div
         className={cls(
-          "relative inline-block w-4 h-4 rounded-full bg-gray-300 transition-colors duration-150",
-          { "bg-sky-700": selected }
+          "relative inline-block w-3 h-3 bg-gray-300 transition-colors duration-150",
+          { "bg-[#5f0e22]": selected }
         )}
       />
       <Field

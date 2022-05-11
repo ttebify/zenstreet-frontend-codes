@@ -96,7 +96,7 @@ export default function LoginForm() {
           </Button>
           <p className="text-center text-base mt-2">
             Don't Have an Account?{" "}
-            <Link to="/app/signup" className="font-medium text-cyan-600">
+            <Link to="/app/register" className="font-medium text-cyan-600">
               Sign Up
             </Link>
             <Link
