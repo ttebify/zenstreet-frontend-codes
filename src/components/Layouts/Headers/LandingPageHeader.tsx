@@ -34,14 +34,14 @@ export default function LandingPageHeader({
             placeItems: "center",
             display: "grid",
           }}
-          className="max-w-2xl mx-auto text-center py-10 px-6"
+          className="max-w-4xl mx-auto sm:mx-0 sm:ml-auto text-center sm:text-right py-10 px-6 sm:px-20"
         >
           <div>
             <h1>{header}</h1>
-            <p className="body-text">{description}</p>
+            <p className="body-text text-lg">{description}</p>
             <div className="my-8">
               <Link to="/app/register" as="button" variant="primary">
-                Start Investing Today
+                Begin Your Journey
               </Link>
             </div>
           </div>

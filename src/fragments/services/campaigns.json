@@ -1,10 +1,10 @@
 {
-    "title": "Campaigns",
-    "description": "You earn return-on-contributions in cryptocurrency from highly vetted campaigns that you choose to contribute to. These campaigns are selected using instruments that offer you the best return on your contributions.",
-    "steps": [
-        "Create account",
-        "Choose a campaign that suits your needs",
-        "Provide equity by contributing to it",
-        "Receive ROC upon maturity"
-    ]
+  "title": "Campaigns",
+  "description": "Earn reasonably high returns on contributions when you lend to highly vetted campaigns of your choice. These campaigns are selected using instruments that offer you the best return on your contributions.",
+  "steps": [
+    "Create account",
+    "Choose a campaign that suits your needs",
+    "Provide equity by lending to the campaign",
+    "Receive ROC upon maturity"
+  ]
 }

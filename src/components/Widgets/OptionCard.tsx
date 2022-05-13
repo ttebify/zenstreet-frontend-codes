@@ -25,7 +25,7 @@ export default function OptionCard() {
           soluta.
         </p>
         <div className="flex justify-center items-center mt-4 space-x-4">
-          <span className="font-medium text-xl">RIO $500</span>
+          <span className="font-medium text-xl">ROC $500</span>
           <Link to="/" className="p-2" as="button" variant="primary">
             Join now
           </Link>

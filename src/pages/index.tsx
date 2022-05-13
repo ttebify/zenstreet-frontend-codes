@@ -34,18 +34,18 @@ const featureSummary = [
     icon: (props?: IconBaseProps) => <GiGuardedTower {...props} />,
     heading: "Security",
     summary:
-      "Protect your assets from  devaluation by helping you earn in cryptocurrency.",
+      "Protect your assets from devaluation by earning in cryptocurrency.",
   },
   {
     icon: (props?: IconBaseProps) => <MdOutlineTrendingUp {...props} />,
     heading: "Active Updates",
-    summary: "Help you stay on top of trends in the financial market.",
+    summary: "Stay on top of trends within the financial market.",
   },
   {
     icon: (props?: IconBaseProps) => <FaSearchDollar {...props} />,
     heading: "Be in Control",
     summary:
-      "We help you keep track of your contributions and accrued interests.",
+      "Get added value when you hold or lock in your funds for accrued interests.",
   },
 ];
 
@@ -53,9 +53,9 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
   return (
     <div className="bg-white">
       <LandingPageHeader
-        header="Crowdfund Your Way To Financial Freedom"
-        description={`Take advantage of our innovative blockchain driven crowdsourcing technology
-          to stay on top of your income.`}
+        header="CrowdLend Your Way To Financial Freedom"
+        description={`Take advantage of our innovative blockchain driven crowdlending
+          technology to stay on top of your income.`}
       />
       <div className="px-4 md:px-16 py-10 max-w-screen-2xl mx-auto">
         <div
@@ -82,10 +82,10 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
             Your Dream Can Be More Than {highlighText("Just a Dream")}
           </h2>
           <p className="max-w-lg md:ml-auto body-text md:text-right">
-            We offer you a robust array of funding options that will suit your
-            financing style and continue to update and upgrade our offerings
-            with top-shelf technology, ensuring that we keep a fresh experience
-            for every contributor or visitor to our platforms.
+            We offer you a robust array of lending options that will suit your
+            financing style. Using top-shelf technology, we keep a fresh
+            experience for every lender and contributor to our platforms with
+            our upgraded offerings.
           </p>
         </div>
         <div className="lg:h-auto w-full">
@@ -106,7 +106,7 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
       </Section>
       <Section noPadding={false} className="text-center">
         <SubHeading>Begin today</SubHeading>
-        <h2>Checkout The Best {highlighText("Funding Options")}</h2>
+        <h2>Check Out The Best {highlighText("Lending Options")}</h2>
         <div className="flex flex-col md:flex-row w-full md:flex-wrap items-center md:justify-between">
           {new Array(3).fill("").map((_, i) => (
             <OptionCard key={i} />
