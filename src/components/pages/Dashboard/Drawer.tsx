@@ -100,7 +100,7 @@ const features = [
   },
 ];
 
-export default function Dashboard() {
+export default function Drawer() {
   return (
     <PageContainer
       topSection={() => <AdvertSlider data={adverts} />}

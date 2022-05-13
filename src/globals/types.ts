@@ -1,4 +1,4 @@
-type BaseNavItem = { name?: string; path?: string };
+type BaseNavItem = { name?: string; path?: string; icon?: JSX.Element };
 export type NavigationItems = BaseNavItem & {
   label?: string;
   type?: string;

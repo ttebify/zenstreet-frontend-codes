@@ -48,6 +48,7 @@ const VerticalNav = ({ items }: { items: NavigationItems[] }) => {
               data-name="child"
               className="w-full flex items-center text-base"
             >
+              <div className="h-10 w-10 p-2">{item.icon}</div>
               <span className="align-middle text-left px-3">{item.name}</span>
             </div>
           </Link>

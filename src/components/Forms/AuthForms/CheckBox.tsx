@@ -29,7 +29,7 @@ function CheckBox({
       <div
         className={cls(
           "relative inline-block w-3 h-3 bg-gray-300 transition-colors duration-150",
-          { "bg-[#5f0e22]": selected }
+          { "!bg-[#5f0e22]": selected }
         )}
       />
       <Field

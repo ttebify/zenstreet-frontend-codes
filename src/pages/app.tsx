@@ -18,6 +18,7 @@ import RewardsPage from "../components/pages/Rewards/RewardsPage";
 import RegisterPage2 from "../components/AuthPages/RegisterPage2";
 import Page404 from "../components/pages/NotFound/404";
 import ProfilePage from "../components/Profile";
+import Dashboard from "../components/pages/Dashboard/Dashboard";
 
 const App = ({ path, ...props }: PageProps) => (
   <Router basepath="/app">
@@ -39,6 +40,7 @@ const App = ({ path, ...props }: PageProps) => (
     <AuthGuard path="/rewards" component={RewardsPage} {...props} />
     <AuthGuard path="/activities" component={ActivityPage} {...props} />
     <AuthGuard path="/referrals" component={ReferralPage} {...props} />
+    <AuthGuard path="/dashboard" component={Dashboard} {...props} />
     <RegisterPage1 path="/register" {...props} />
     <RegisterPage2 path="/register-complete" {...props} />
     <LoginPage path="/login" {...props} />

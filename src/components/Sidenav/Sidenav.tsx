@@ -39,10 +39,7 @@ const Sidenav = () => {
             >
               <Logo className="block" />
             </div>
-            <Scrollbar
-              options={{ suppressScrollX: true }}
-              className="relative px-1"
-            >
+            <Scrollbar options={{ suppressScrollX: true }} className="relative">
               <VerticalNav items={navigations} />
             </Scrollbar>
           </div>
