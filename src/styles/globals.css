@@ -71,5 +71,5 @@
 
 /* Custom styles for react slick dots, on the home page */
 li.slick-active div {
-  @apply w-16 bg-blue-500;
+  @apply w-16 bg-[#db2870];
 }

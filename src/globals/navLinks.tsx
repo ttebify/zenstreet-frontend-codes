@@ -1,8 +1,8 @@
 export const navigationItems = [
   {
     id: 1,
-    title: "How it Works",
-    href: "/#",
+    title: "About",
+    href: "/about",
   },
   {
     id: 2,
@@ -11,7 +11,7 @@ export const navigationItems = [
   },
   {
     id: 3,
-    title: "Features",
+    title: "Services",
     href: "/#",
   },
   {

@@ -12,7 +12,7 @@ export default function Section({
 }) {
   const pClass = noPadding ? "pt-0 py-0" : "py-16 md:py-20";
   return (
-    <div className={cls(props.containerClass)}>
+    <section className={cls(props.containerClass)}>
       <div
         className={cls(
           "px-4 md:px-16 max-w-screen-2xl mx-auto",
@@ -22,6 +22,6 @@ export default function Section({
       >
         {props.children}
       </div>
-    </div>
+    </section>
   );
 }

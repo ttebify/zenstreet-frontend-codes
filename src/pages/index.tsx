@@ -13,6 +13,7 @@ import { IconBaseProps } from "react-icons";
 import FeatureCard from "../components/Widgets/FeatureCard";
 import { StaticImage } from "gatsby-plugin-image";
 import { FaSearchDollar } from "react-icons/fa";
+import cls from "classnames";
 
 // Graphql query for this page
 export const servicesQuery = graphql`
@@ -97,10 +98,10 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
           />
         </div>
       </Section>
-      <Section noPadding={false}>
+      <Section noPadding={false} className="bg-[#f5bed428]">
         <SlickSlider
           label="Steps to perticipate"
-          heading={<h2>How it {highlighText("works")}</h2>}
+          heading={<h2>How it {highlighText("works", "text-[#c2004f]")}</h2>}
           data={data}
         />
       </Section>
@@ -146,8 +147,8 @@ const IndexPage = ({ data }: { data: ServicesQueryReturnType }) => {
   );
 };
 
-const highlighText = (text: string) => (
-  <span className="text-blue-500">{text}</span>
+const highlighText = (text: string, className?: string) => (
+  <span className={cls(className ? className : "text-blue-500")}>{text}</span>
 );
 
 export default IndexPage;

@@ -26,10 +26,10 @@ interface SlideArrowProps extends CustomArrowProps {
 const SlideArrow = ({ slideNext, slidePrev }: SlideArrowProps) => {
   return (
     <div>
-      <Button clickHandler={slidePrev} className="bg-white text-blue-600">
+      <Button clickHandler={slidePrev} className="bg-white text-[#db2870]">
         <BiArrowBack className="w-8 h-8" />
       </Button>
-      <Button clickHandler={slideNext} className="bg-blue-600 text-white ml-3">
+      <Button clickHandler={slideNext} className="bg-[#db2870] text-white ml-3">
         <BiArrowBack className="w-8 h-8 rotate-180" />
       </Button>
     </div>
@@ -89,7 +89,7 @@ export default function SlickSlider(props: SlickSLiderProps) {
                     className="text-sm font-light flex items-center space-x-1"
                   >
                     <span
-                      className="w-8 h-8 rounded-full bg-blue-500 font-bold inline-flex text-white
+                      className="w-8 h-8 rounded-full bg-[#db2870] font-bold inline-flex text-white
                         flex-none justify-center items-center"
                     >
                       {i + 1}
