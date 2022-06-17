@@ -19,7 +19,7 @@ export default function RegisterPage2({ location }: PageProps) {
       title="Welcome Aboard"
       motivation={`Take advantage of our innovative blockchain driven crowd sourcing technology to
       stay on top of your income.`}
-      bgColorClass="bg-[#5f0e22]"
+      bgColorClass="!bg-[#5f0e22]"
       content={<RegisterCompleteForm {...state} />}
     />
   );
