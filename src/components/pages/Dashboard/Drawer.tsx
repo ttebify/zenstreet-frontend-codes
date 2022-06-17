@@ -106,7 +106,7 @@ export default function Drawer() {
       topSection={() => <AdvertSlider data={adverts} />}
       heading="Where do you want to visit today?"
     >
-      <div className="flex flex-wrap py-10 mx-auto max-w-xl">
+      <div className="flex flex-wrap py-10 mx-auto max-w-screen-md justify-center">
         {features.map((summary) => (
           <FeatureLink
             key={summary.heading}
@@ -175,7 +175,7 @@ function FeatureLink({ icon, heading, url }: FeatureLinkProps) {
       hover:bg-white"
     >
       <div className="p-3 flex justify-center items-center overflow-hidden">
-        {icon()}
+        {icon({ className: "w-8 h-8" })}
       </div>
       <p className="text-xs text-center">{heading}</p>
     </Link>
